@@ -24,14 +24,13 @@ public class ServerApplication {
 @Bean
 	CommandLineRunner run(ServerRepo serverRepo){
 		return args -> {
-			serverRepo.save(new Server(null,"192.168.1.160","Ubuntu Linux","16 GB","Personal Pc",
+			serverRepo.save(new Server(null,"127.0.0.1:5434","PostgreSQL","4 GB","SQL server",
 					"http://localhost:8080/server/image/server1.png", Status.SERVER_UP));
-			serverRepo.save(new Server(null, "192.168.1.161", "Windows Server", "8 GB", "Production Server",
+			serverRepo.save(new Server(null, "127.0.0.1:8080", "Hasura/GraphQL-Engine", "2 GB", "Hasura Backend Server",
 					"http://localhost:8080/server/image/server1.png", Status.SERVER_DOWN));
-			serverRepo.save(new Server(null, "192.168.1.162", "CentOS Linux", "32 GB", "Development Server",
+			serverRepo.save(new Server(null, "127.0.0.1:8200", "Vault Variables", "128 MB", "Variable storing server",
 					"http://localhost:8080/server/image/server2.png", Status.SERVER_UP));
-			serverRepo.save(new Server(null, "192.168.1.163", "Ubuntu Linux", "64 GB", "Backup Server",
-					"http://localhost:8080/server/image/server3.png", Status.SERVER_DOWN));
+
 
 
 
